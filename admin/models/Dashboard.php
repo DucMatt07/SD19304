@@ -3,7 +3,7 @@ class Dashboard
 {
   public $conn;
 
-  // Kết nối cơ sở dữ liệu
+  // Kết nối cơ sở dữ liệu ciewieneiu
   public function __construct()
   {
     $this->conn = connectDB();

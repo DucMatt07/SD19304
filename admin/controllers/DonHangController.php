@@ -3,7 +3,7 @@
 class DonHangController
 {
 
-  // Kết nối model DonHang
+  // Kết nối model DonHang ncijewnjencewnfw
   public $modelDonHang;
 
   public function __construct()
