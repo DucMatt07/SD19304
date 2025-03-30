@@ -3,7 +3,7 @@ class KhuyenMai
 {
 
   public $conn;
-  // kết nối csdl
+  // kết nối csdl cuewbfceubfeuwhbf
   public function __construct()
   {
     $this->conn = connectDB();
