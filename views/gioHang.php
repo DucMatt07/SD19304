@@ -1,5 +1,5 @@
 <?php require_once './views/layouts/header.php'; ?>
-
+<!-- Giao diện giỏ hàng -->
 <?php require_once './views/layouts/menu.php'; ?>
 <main><br><br><br><br>
   <div class="mb-4 pb-4"></div>
@@ -48,8 +48,10 @@
                 <tr>
                   <td>
                     <div class="shopping-cart__product-item">
-                      <a href="<?= "?act=chi-tiet-san-pham&id_san_pham=" . $sanPham['san_pham_id'] ?>">
-                        <img loading="lazy" src="<?= $sanPham['hinh_anh'] ?>" width="100" height="110" alt="" class="pc__img">
+                      <a
+                        href="<?= "?act=chi-tiet-san-pham&id_san_pham=" . $sanPham['san_pham_id'] ?>">
+                        <img loading="lazy" src="<?= $sanPham['hinh_anh'] ?>" width="100"
+                          height="110" alt="" class="pc__img">
                       </a>
                     </div>
                   </td>
@@ -61,7 +63,8 @@
                   <td>
                     <span class="shopping-cart__product-price">
                       <?php if ($sanPham['gia_khuyen_mai']) { ?>
-                        <span style="color: red;"> <?= number_format($sanPham['gia_khuyen_mai'], 0, ',', '.') ?>đ</span><br>
+                        <span style="color: red;">
+                          <?= number_format($sanPham['gia_khuyen_mai'], 0, ',', '.') ?>đ</span><br>
                         <span><del><?= number_format($sanPham['gia_ban'], 0, ',', '.') ?>đ</del></span>
                       <?php } else { ?>
                         <span> <?= number_format($sanPham['gia_ban'], 0, ',', '.') ?>đ</span>
@@ -70,13 +73,18 @@
                   </td>
                   <td>
                     <div class="qty-control position-relative">
-                      <input type="number" name="so_luong[<?= $sanPham['san_pham_id'] ?>]" class="qty-control__number text-center" value="<?= $sanPham['so_luong'] ?>" min="1" data-gia="<?= $sanPham['gia_khuyen_mai'] ?? $sanPham['gia_ban'] ?>" data-san-pham-id="<?= $sanPham['san_pham_id'] ?>" oninput="updateProductPrice(this)">
+                      <input type="number" name="so_luong[<?= $sanPham['san_pham_id'] ?>]"
+                        class="qty-control__number text-center" value="<?= $sanPham['so_luong'] ?>"
+                        min="1" data-gia="<?= $sanPham['gia_khuyen_mai'] ?? $sanPham['gia_ban'] ?>"
+                        data-san-pham-id="<?= $sanPham['san_pham_id'] ?>"
+                        oninput="updateProductPrice(this)">
                       <div class="qty-control__reduce">-</div>
                       <div class="qty-control__increase">+</div>
                     </div>
                   </td>
                   <td>
-                    <span class="shopping-cart__subtotal total-price" id="subtotal-<?= $sanPham['san_pham_id'] ?>">
+                    <span class="shopping-cart__subtotal total-price"
+                      id="subtotal-<?= $sanPham['san_pham_id'] ?>">
                       <?php
                       $tongtien = 0;
                       if ($sanPham['gia_khuyen_mai']) {
@@ -90,7 +98,9 @@
                     </span>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-danger" onclick="deleteProduct(<?= $sanPham['san_pham_id'] ?>)"><i class="bi bi-trash3-fill"></i></button>
+                    <button type="button" class="btn btn-danger"
+                      onclick="deleteProduct(<?= $sanPham['san_pham_id'] ?>)"><i
+                        class="bi bi-trash3-fill"></i></button>
                   </td>
                 </tr>
               <?php endforeach ?>
@@ -106,7 +116,8 @@
                 <tbody>
                   <tr>
                     <th>Tổng tiền sản phẩm</th>
-                    <td id="total-amount"><?php echo number_format($tongGioHang, 0, ',', '.') ?> đ</td>
+                    <td id="total-amount"><?php echo number_format($tongGioHang, 0, ',', '.') ?> đ
+                    </td>
                   </tr>
                   <tr>
                     <th>Vận chuyển</th>
@@ -141,7 +152,8 @@
                 <?php if ($tongGioHang > 0) : ?>
                   <button type="submit" class="btn btn-primary btn-checkout">Bắt đầu thanh toán</button>
                 <?php else : ?>
-                  <button class="btn btn-primary btn-checkout" disabled>Không có sản phẩm trong giỏ hàng</button>
+                  <button class="btn btn-primary btn-checkout" disabled>Không có sản phẩm trong giỏ
+                    hàng</button>
                 <?php endif; ?>
               </div>
             </div>
@@ -202,12 +214,14 @@
 
       // Tính tổng tiền cho sản phẩm
       const subtotal = quantity * price;
-      document.getElementById('subtotal-' + productId).innerText = new Intl.NumberFormat('vi-VN').format(subtotal) + ' đ';
+      document.getElementById('subtotal-' + productId).innerText = new Intl.NumberFormat('vi-VN').format(
+        subtotal) + ' đ';
 
       // Cập nhật tổng tiền sản phẩm
       let total = 0;
       document.querySelectorAll('.total-price').forEach(function(subtotalElement) {
-        total += parseInt(subtotalElement.innerText.replace(/[^\d]/g, '')); // Loại bỏ ký tự không phải số và tính tổng
+        total += parseInt(subtotalElement.innerText.replace(/[^\d]/g,
+          '')); // Loại bỏ ký tự không phải số và tính tổng
       });
 
       // Cập nhật tổng tiền giỏ hàng (bao gồm phí vận chuyển)
@@ -228,8 +242,10 @@
     qtyInputs.forEach(function(input) {
       input.addEventListener('input', function() {
         setTimeout(function() {
-          console.log('Giá trị sau khi thay đổi: ' + input.value); // Giá trị sau khi thay đổi
-          updateProductPrice(input); // Cập nhật lại giá sản phẩm khi thay đổi số lượng
+          console.log('Giá trị sau khi thay đổi: ' + input
+            .value); // Giá trị sau khi thay đổi
+          updateProductPrice(
+            input); // Cập nhật lại giá sản phẩm khi thay đổi số lượng
         }, 0);
       });
     });
@@ -244,8 +260,10 @@
 
         // Sử dụng setTimeout để ghi lại giá trị sau khi thay đổi
         setTimeout(function() {
-          console.log('Giá trị trước khi thay đổi: ' + prevValue); // Giá trị trước khi thay đổi
-          console.log('Giá trị sau khi thay đổi: ' + input.value); // Giá trị sau khi thay đổi
+          console.log('Giá trị trước khi thay đổi: ' +
+            prevValue); // Giá trị trước khi thay đổi
+          console.log('Giá trị sau khi thay đổi: ' + input
+            .value); // Giá trị sau khi thay đổi
           updateProductPrice(input); // Cập nhật giá sản phẩm sau khi thay đổi
         }, 0);
       });
@@ -263,8 +281,10 @@
 
         // Sử dụng setTimeout để ghi lại giá trị sau khi thay đổi
         setTimeout(function() {
-          console.log('Giá trị trước khi thay đổi: ' + prevValue); // Giá trị trước khi thay đổi
-          console.log('Giá trị sau khi thay đổi: ' + input.value); // Giá trị sau khi thay đổi
+          console.log('Giá trị trước khi thay đổi: ' +
+            prevValue); // Giá trị trước khi thay đổi
+          console.log('Giá trị sau khi thay đổi: ' + input
+            .value); // Giá trị sau khi thay đổi
           updateProductPrice(input); // Cập nhật giá sản phẩm sau khi thay đổi
         }, 0);
       });
