@@ -6,7 +6,7 @@ class DonHang
   public $conn;
 
 
-  // Ket noi csdl
+  // Ket noi csdl cbuecuee
 
   public function __construct()
   {
