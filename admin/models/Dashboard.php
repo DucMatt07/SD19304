@@ -9,7 +9,7 @@ class Dashboard
     $this->conn = connectDB();
   }
 
-  // Lấy tổng doanh thu theo trạng thái
+  // Lấy tổng doanh thu theo trạng thái ueue
   public function getRevenueByStatus()
   {
     try {

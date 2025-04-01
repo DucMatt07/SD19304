@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABQ4I2R9aArKpP18tM4z6EZuZyK1BZHhnzB6tAkJ4ZjmIH6cckqvLox" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABQ4I2R9aArKpP18tM4z6EZuZyK1BZHhnzB6tAkJ4ZjmIH6cckqvLox" crossorigin="anonymous">
 
 <!-- Bootstrap JS (Optional, for interactive components like modals, tooltips, etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0RU6F2LbQOV+K8jZRSjfa17Pfm7CfiJpmAnQhZtYfU0U2XlA" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pzjw8f+ua7Kw1TIq0RU6F2LbQOV+K8jZRSjfa17Pfm7CfiJpmAnQhZtYfU0U2XlA" crossorigin="anonymous">
+</script>
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/master/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Oct 2024 07:29:52 GMT -->
+<!-- cnjenkevev -->
 
 <head>
 
@@ -52,7 +58,8 @@
 
           <div class="row">
             <div class="col-12">
-              <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+              <div
+                class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
                 <h4 class="mb-sm-0">Quản lý đơn hàng</h4>
 
                 <div class="page-title-right">
@@ -96,7 +103,8 @@
                         <!-- Format Date row -->
                         <div class="row">
                           <div class="col-12 text-end">
-                            <strong>Ngày đặt hàng: <?= $donHang['ngay_dat_hang'] ?> </strong>
+                            <strong>Ngày đặt hàng: <?= $donHang['ngay_dat_hang'] ?>
+                            </strong>
                           </div>
                         </div>
                         <div class="col-sm-3 invoice-col">
@@ -119,7 +127,8 @@
                         <div class="col-sm-3 invoice-col">
                           <h5>Mã đơn hàng: <?= $donHang['ma_don_hang'] ?></h5>
                           Ghi chú: <?= $donHang['ghi_chu'] ?><br>
-                          Phương thức thanh toán: <?= $pTTT[$donHang['phuong_thuc_thanh_toan_id']] ?><br>
+                          Phương thức thanh toán:
+                          <?= $pTTT[$donHang['phuong_thuc_thanh_toan_id']] ?><br>
                         </div>
                       </div>
                       <!-- /.row -->
@@ -151,11 +160,14 @@
                             ?>
                               <tr>
                                 <td><?= $key + 1 ?></td>
-                                <td><img src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="" width="150px"></td>
+                                <td><img src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt=""
+                                    width="150px"></td>
                                 <td><?= $sanPham['ten_san_pham'] ?></td>
-                                <td><?= number_format($sanPham['don_gia'], 0, ',', '.') ?>đ</td>
+                                <td><?= number_format($sanPham['don_gia'], 0, ',', '.') ?>đ
+                                </td>
                                 <td><?= $sanPham['so_luong'] ?></td>
-                                <td><?= number_format($sanPham['thanh_tien'], 0, ',', '.') ?>đ</td>
+                                <td><?= number_format($sanPham['thanh_tien'], 0, ',', '.') ?>đ
+                                </td>
                               </tr>
                               <?php $tong_tien += $sanPham['thanh_tien'] ?>
                             <?php  } ?>
@@ -184,7 +196,8 @@
                           <tbody>
                             <tr>
                               <td>Thành tiền:</td>
-                              <td class="text-right"><?= number_format($tong_tien, 0, ',', '.') ?> đ</td>
+                              <td class="text-right">
+                                <?= number_format($tong_tien, 0, ',', '.') ?> đ</td>
                             </tr>
                             <tr>
                               <td>Vận chuyển:</td>
@@ -192,7 +205,9 @@
                             </tr>
                             <tr class="font-weight-bold bg-secondary text-white">
                               <td>Tổng tiền:</td>
-                              <td class="text-right"><?= number_format($tong_tien + 50000, 0, ',', '.') ?> đ</td>
+                              <td class="text-right">
+                                <?= number_format($tong_tien + 50000, 0, ',', '.') ?> đ
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -260,7 +275,8 @@
   </div>
 
   <div class="customizer-setting d-none d-md-block">
-    <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+    <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+      data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
       <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
     </div>
   </div>
