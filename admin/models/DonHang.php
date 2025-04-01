@@ -6,7 +6,9 @@ class DonHang
   public $conn;
 
   // Kết nối cơ sở dữ liệu
-  //ubwebcewbcewbcuewbcwe
+
+  // dbubcwebcewbc
+
   public function __construct()
   {
     $this->conn = connectDB();  // Giả sử connectDB() là một hàm kết nối cơ sở dữ liệu đã được định nghĩa ở nơi khác
