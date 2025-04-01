@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/master/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Oct 2024 07:29:52 GMT -->
 
-
+<!-- hcbjhwbcbewcbewc -->
 
 <head>
 
@@ -47,7 +48,8 @@
 
           <div class="row">
             <div class="col-12">
-              <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+              <div
+                class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
                 <h4 class="mb-sm-0">Quản lý đơn hàng</h4>
 
                 <div class="page-title-right">
@@ -82,82 +84,114 @@
                   <div class="card-body">
                     <!-- <p class="text-muted">Use <code>form-floating</code> class to enable floating labels with Bootstrap’s textual form fields.</p> -->
                     <div class="container my-5">
-                    <form action="?act=sua-don-hang" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= $donHangShow['id'] ?>">
+                      <form action="?act=sua-don-hang" method="POST"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $donHangShow['id'] ?>">
 
-    <!-- Thẻ card cho thông tin đơn hàng -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-header  text-white">
-            <h5 class="mb-0">Thông tin đơn hàng</h5>
-        </div>
-        <div class="card-body">
-            <div class="row g-3">
-                <!-- Mã đơn hàng -->
-                <div class="col-md-4">
-                    <div class="form-floating">
-                        <input type="text" class="form-control form-control-lg" name="id_don_hang" value="<?= $donHangShow['ma_don_hang'] ?>" disabled>
-                        <label for="id_don_hang">Mã đơn hàng</label>
+                        <!-- Thẻ card cho thông tin đơn hàng -->
+                        <div class="card shadow-sm mb-4">
+                          <div class="card-header  text-white">
+                            <h5 class="mb-0">Thông tin đơn hàng</h5>
+                          </div>
+                          <div class="card-body">
+                            <div class="row g-3">
+                              <!-- Mã đơn hàng -->
+                              <div class="col-md-4">
+                                <div class="form-floating">
+                                  <input type="text"
+                                    class="form-control form-control-lg"
+                                    name="id_don_hang"
+                                    value="<?= $donHangShow['ma_don_hang'] ?>"
+                                    disabled>
+                                  <label for="id_don_hang">Mã đơn hàng</label>
+                                </div>
+                              </div>
+
+                              <!-- Ngày đặt hàng -->
+                              <div class="col-md-4">
+                                <div class="form-floating">
+                                  <input type="text"
+                                    class="form-control form-control-lg"
+                                    name="mo_ta"
+                                    value="<?= $donHangShow['ngay_dat_hang'] ?>"
+                                    disabled>
+                                  <label for="mo_ta">Ngày đặt hàng</label>
+                                </div>
+                              </div>
+
+                              <!-- Phương thức thanh toán -->
+                              <div class="col-md-4">
+                                <div class="form-floating">
+                                  <input type="text"
+                                    class="form-control form-control-lg"
+                                    name="phuong_thuc_thanh_toan"
+                                    value="<?= $pTTT[$donHangShow['phuong_thuc_thanh_toan_id']] ?>"
+                                    disabled>
+                                  <label for="phuong_thuc_thanh_toan">Phương thức
+                                    thanh toán</label>
+                                </div>
+                              </div>
+
+                              <!-- Trạng thái thanh toán -->
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Thẻ card cho trạng thái đơn hàng -->
+                        <div class="card shadow-sm mb-4">
+                          <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Trạng thái đơn hàng</h5>
+                          </div>
+                          <div class="card-body">
+                            <div class="row g-3">
+                              <!-- Trạng thái đơn hàng -->
+                              <div class="col-md-6">
+                                <div class="mb-3">
+                                  <label for="ForminputState" class="form-label">Trạng
+                                    thái đơn hàng</label>
+                                  <select name="trang_thai" id="ForminputState"
+                                    class="form-select form-select-lg">
+                                    <option value="14"
+                                      <?= $donHangShow['trang_thai'] == 'Chờ xác nhận' ? 'selected' : '' ?>>
+                                      Chờ xác nhận</option>
+                                    <option value="15"
+                                      <?= $donHangShow['trang_thai'] == 'Đã xác nhận' ? 'selected' : '' ?>>
+                                      Đã xác nhận</option>
+                                    <option value="16"
+                                      <?= $donHangShow['trang_thai'] == 'Đang vận chuyển' ? 'selected' : '' ?>>
+                                      Đang vận chuyển</option>
+                                    <option value="17"
+                                      <?= $donHangShow['trang_thai'] == 'Đã giao hàng' ? 'selected' : '' ?>>
+                                      Đã giao hàng</option>
+                                    <option value="18"
+                                      <?= $donHangShow['trang_thai'] == 'Đã hoàn thành' ? 'selected' : '' ?>>
+                                      Đã hoàn thành</option>
+                                    <option value="19"
+                                      <?= $donHangShow['trang_thai'] == 'Đã thất bại' ? 'selected' : '' ?>>
+                                      Đã thất bại</option>
+                                    <option value="20"
+                                      <?= $donHangShow['trang_thai'] == 'Đã hủy' ? 'selected' : '' ?>>
+                                      Đã hủy</option>
+                                  </select>
+                                  <?php if (!empty($_SESSION["errors"]['trang_thai'])): ?>
+                                    <span
+                                      class="text-danger"><?= $_SESSION["errors"]['trang_thai'] ?></span>
+                                  <?php endif; ?>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Nút Submit -->
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary btn-lg w-100">Cập nhật
+                            đơn hàng</button>
+                        </div>
+                      </form>
+
                     </div>
-                </div>
-
-                <!-- Ngày đặt hàng -->
-                <div class="col-md-4">
-                    <div class="form-floating">
-                        <input type="text" class="form-control form-control-lg" name="mo_ta" value="<?= $donHangShow['ngay_dat_hang'] ?>" disabled>
-                        <label for="mo_ta">Ngày đặt hàng</label>
-                    </div>
-                </div>
-
-                <!-- Phương thức thanh toán -->
-                <div class="col-md-4">
-                    <div class="form-floating">
-                        <input type="text" class="form-control form-control-lg" name="phuong_thuc_thanh_toan" value="<?= $pTTT[$donHangShow['phuong_thuc_thanh_toan_id']] ?>" disabled>
-                        <label for="phuong_thuc_thanh_toan">Phương thức thanh toán</label>
-                    </div>
-                </div>
-
-                <!-- Trạng thái thanh toán -->
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Thẻ card cho trạng thái đơn hàng -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-header bg-info text-white">
-            <h5 class="mb-0">Trạng thái đơn hàng</h5>
-        </div>
-        <div class="card-body">
-            <div class="row g-3">
-                <!-- Trạng thái đơn hàng -->
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="ForminputState" class="form-label">Trạng thái đơn hàng</label>
-                        <select name="trang_thai" id="ForminputState" class="form-select form-select-lg">
-                            <option value="14" <?= $donHangShow['trang_thai'] == 'Chờ xác nhận' ? 'selected' : '' ?>>Chờ xác nhận</option>
-                            <option value="15" <?= $donHangShow['trang_thai'] == 'Đã xác nhận' ? 'selected' : '' ?>>Đã xác nhận</option>
-                            <option value="16" <?= $donHangShow['trang_thai'] == 'Đang vận chuyển' ? 'selected' : '' ?>>Đang vận chuyển</option>
-                            <option value="17" <?= $donHangShow['trang_thai'] == 'Đã giao hàng' ? 'selected' : '' ?>>Đã giao hàng</option>
-                            <option value="18" <?= $donHangShow['trang_thai'] == 'Đã hoàn thành' ? 'selected' : '' ?>>Đã hoàn thành</option>
-                            <option value="19" <?= $donHangShow['trang_thai'] == 'Đã thất bại' ? 'selected' : '' ?>>Đã thất bại</option>
-                            <option value="20" <?= $donHangShow['trang_thai'] == 'Đã hủy' ? 'selected' : '' ?>>Đã hủy</option>
-                        </select>
-                        <?php if (!empty($_SESSION["errors"]['trang_thai'])): ?>
-                            <span class="text-danger"><?= $_SESSION["errors"]['trang_thai'] ?></span>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nút Submit -->
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-lg w-100">Cập nhật đơn hàng</button>
-    </div>
-</form>
-
-</div>
 
 
                   </div>
@@ -281,7 +315,8 @@
   </div>
 
   <div class="customizer-setting d-none d-md-block">
-    <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+    <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+      data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
       <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
     </div>
   </div>

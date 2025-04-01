@@ -6,6 +6,7 @@ class DonHang
   public $conn;
 
   // Kết nối cơ sở dữ liệu
+  //ubwebcewbcewbcuewbcwe
   public function __construct()
   {
     $this->conn = connectDB();  // Giả sử connectDB() là một hàm kết nối cơ sở dữ liệu đã được định nghĩa ở nơi khác
@@ -17,8 +18,7 @@ class DonHang
     try {
       $sql = "SELECT don_hangs.*, trang_thai_don_hangs.trang_thai
                     FROM don_hangs
-                    JOIN trang_thai_don_hangs ON don_hangs.trang_thai_don_hang = trang_thai_don_hangs.id ORDER BY `id` DESC";
- ;
+                    JOIN trang_thai_don_hangs ON don_hangs.trang_thai_don_hang = trang_thai_don_hangs.id ORDER BY `id` DESC";;
       $stmt = $this->conn->prepare($sql);
       $stmt->execute();
       return $stmt->fetchAll();
