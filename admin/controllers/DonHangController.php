@@ -4,6 +4,7 @@ class DonHangController
 {
 
   // Kết nối model DonHang ncijewnjencewnfw
+  //cbwebcewcewcnewcnwe
   public $modelDonHang;
 
   public function __construct()
